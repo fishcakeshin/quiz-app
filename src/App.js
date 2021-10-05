@@ -2,6 +2,10 @@ import './App.css';
 import React from "react";
 
 function App() {
+    const handleClick = (e) => {
+        console.log(e.target.value);
+    };
+
     return (
         <div className="container">
             <div className="app">
@@ -14,10 +18,10 @@ function App() {
                     </div>
                 </div>
                 <div className="answer-section">
-                    <button>미국</button>
-                    <button>영국</button>
-                    <button>네덜란드</button>
-                    <button>스위스</button>
+                    <button onClick={handleClick} value="영국">영국</button>
+                    <button onClick={handleClick} value="네덜란드">네덜란드</button>
+                    <button onClick={handleClick} value="미국">미국</button>
+                    <button onClick={handleClick} value="스위스">스위스</button>
                 </div>
             </div>
         </div>
