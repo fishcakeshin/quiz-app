@@ -2,6 +2,16 @@ import './App.css';
 import React from "react";
 
 function App() {
+    const quiz = {
+        question: "세계 최초로 안락사를 합법화한 나라는?",
+        answers: [
+            { text: "영국", isCorrect: false},
+            { text: "네덜란드", isCorrect: true },
+            { text: "미국", isCorrect: false },
+            { text: "스위스", isCorrect: false },
+        ],
+    };
+
     const handleClick = (e) => {
         const answer = e.target.value;
         if (answer === "네덜란드") {
@@ -18,15 +28,14 @@ function App() {
                     <h1 className="question-header">
                         <span>1</span>/4
                     </h1>
-                    <div className="question-text">
-                        세계 최초로 안락사를 합법화한 나라는?
-                    </div>
+                    <div className="question-text">{quiz.question}</div>
                 </div>
                 <div className="answer-section">
-                    <button onClick={handleClick} value="영국">영국</button>
-                    <button onClick={handleClick} value="네덜란드">네덜란드</button>
-                    <button onClick={handleClick} value="미국">미국</button>
-                    <button onClick={handleClick} value="스위스">스위스</button>
+                    {quiz.answers.map((answer) => (
+                        <button value={answer.text} onClick={handleClick}>
+                            {answer.text}
+                        </button>
+                    ))}
                 </div>
             </div>
         </div>
