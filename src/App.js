@@ -3,7 +3,12 @@ import React from "react";
 
 function App() {
     const handleClick = (e) => {
-        console.log(e.target.value);
+        const answer = e.target.value;
+        if (answer === "네덜란드") {
+            alert("정답 👏👏👏");
+        } else {
+            alert("오답 😣");
+        }
     };
 
     return (
